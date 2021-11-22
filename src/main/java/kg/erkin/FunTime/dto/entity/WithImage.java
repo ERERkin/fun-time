@@ -10,27 +10,14 @@ import java.util.List;
 
 @Builder
 @Entity
-@Table(name = "places")
+@Table(name = "with_image")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Place extends BaseEntity{
-    @Column
-    String name;
-
-    @Column
-    String description;
-
-    @Column
-    String address;
-
-    @OneToMany(mappedBy = "place", fetch = FetchType.EAGER, targetEntity = RoomType.class)
+public class WithImage extends BaseEntity{
+    @OneToMany(mappedBy = "album", fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
-    List<RoomType> roomTypes;
-
-    @OneToOne
-    @JoinColumn(name = "album_id")
-    WithImage album;
+    List<Image> images;
 }

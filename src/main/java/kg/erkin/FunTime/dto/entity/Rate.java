@@ -4,30 +4,24 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Builder
 @Entity
-@Table(name = "users")
+@Table(name = "prices")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User extends BaseEntity{
+public class Rate extends BaseEntity{
     @Column
-    String login;
+    Long minute;
 
     @Column
-    String password;
-
-    @Column
-    String email;
-
-    @OneToOne
-    @JoinColumn(name = "avatar_id")
-    WithImage avatar;
+    BigDecimal amount;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
-    Role role;
+    @JoinColumn(name = "room_type_id")
+    RoomType roomType;
 }
