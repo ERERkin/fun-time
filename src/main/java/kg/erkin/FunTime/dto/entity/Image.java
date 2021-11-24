@@ -17,7 +17,7 @@ public class Image extends BaseEntity {
     @Column
     String link;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "album_id")
     WithImage album;
 }
