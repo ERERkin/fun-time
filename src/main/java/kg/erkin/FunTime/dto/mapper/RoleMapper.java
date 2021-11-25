@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 public class RoleMapper implements BaseMapper<Role, RoleDto>{
     @Override
     public Role dtoToEntity(RoleDto dto) {
-        return null;
+        return mapper.map(dto, Role.class);
     }
 
     @Override
     public RoleDto entityToDto(Role entity) {
-        return null;
+        return mapper.map(entity, RoleDto.class);
     }
 }

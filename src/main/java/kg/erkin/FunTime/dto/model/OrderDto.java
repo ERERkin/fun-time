@@ -15,6 +15,8 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @Builder
 public class OrderDto {
+    Long id;
+
     LocalDateTime startRoom;
 
     RoomTypeDto roomType;

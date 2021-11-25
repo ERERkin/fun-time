@@ -14,6 +14,8 @@ import java.math.BigDecimal;
 @RequiredArgsConstructor
 @Builder
 public class RateDto {
+    Long id;
+
     Long minute;
 
     BigDecimal amount;

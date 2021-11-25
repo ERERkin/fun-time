@@ -16,6 +16,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @Builder
 public class UserDto {
+    Long id;
+
     String login;
 
     String password;

@@ -8,5 +8,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Builder
 public class RoleDto {
+    Long id;
+
     String name;
 }

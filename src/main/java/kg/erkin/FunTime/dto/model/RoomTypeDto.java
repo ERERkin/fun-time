@@ -16,6 +16,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @Builder
 public class RoomTypeDto {
+    Long id;
+
     String name;
 
     String description;

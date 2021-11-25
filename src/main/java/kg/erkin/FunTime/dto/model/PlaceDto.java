@@ -15,6 +15,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @Builder
 public class PlaceDto {
+    Long id;
+
     String name;
 
     String description;

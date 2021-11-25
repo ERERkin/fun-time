@@ -10,13 +10,29 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Data
 public class UserMapper implements BaseMapper<User, UserDto>{
+    private final RoleMapper roleMapper;
+    private final WithImageMapper withImageMapper;
+
     @Override
     public User dtoToEntity(UserDto dto) {
-        return null;
+        return User.builder()
+                .login(dto.getLogin())
+                .password(dto.getPassword())
+                .email(dto.getEmail())
+                .role(roleMapper.dtoToEntity(dto.getRole()))
+                .avatar(withImageMapper.dtoToEntity(dto.getAvatar()))
+                .build();
     }
 
     @Override
     public UserDto entityToDto(User entity) {
-        return null;
+        return UserDto.builder()
+                .id(entity.getId())
+                .login(entity.getLogin())
+                .password(entity.getPassword())
+                .email(entity.getEmail())
+                .role(roleMapper.entityToDto(entity.getRole()))
+                .avatar(withImageMapper.entityToDto(entity.getAvatar()))
+                .build();
     }
 }

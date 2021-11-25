@@ -7,24 +7,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import javax.swing.text.html.parser.Entity;
+
 @Component
 @AllArgsConstructor
 @Data
 public class OrderMapper implements BaseMapper<Order, OrderDto>{
-    private final RoomTypeMapper roomTypeMapper;
-    private final UserMapper userMapper;
-
     @Override
     public Order dtoToEntity(OrderDto dto) {
-        return null;
+        return mapper.map(dto, Order.class);
     }
 
     @Override
     public OrderDto entityToDto(Order entity) {
-        return OrderDto.builder()
-                .startRoom(entity.getStartRoom())
-                .roomType(roomTypeMapper.entityToDto(entity.getRoomType()))
-                .user(userMapper.entityToDto(entity.getUser()))
-                .build();
+        return mapper.map(entity, OrderDto.class);
     }
 }

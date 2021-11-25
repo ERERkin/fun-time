@@ -19,9 +19,10 @@ public class WithImageMapper{
     private final BaseCrudService baseCrudService;
     private final ImageMapper imageMapper;
 
-    // TODO Надо сделать обратку
     public WithImage dtoToEntity(List<ImageDto> imageDtos) {
-        return null;
+        return WithImage.builder()
+                .images(imageDtos.stream().map(imageMapper::dtoToEntity).collect(Collectors.toList()))
+                .build();
     }
 
     public List<ImageDto> entityToDto(WithImage entity) {

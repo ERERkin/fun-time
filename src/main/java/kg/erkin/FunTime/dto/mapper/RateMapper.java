@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 public class RateMapper implements BaseMapper<Rate, RateDto>{
     @Override
     public Rate dtoToEntity(RateDto dto) {
-        return null;
+        return mapper.map(dto, Rate.class);
     }
 
     @Override
     public RateDto entityToDto(Rate entity) {
-        return null;
+        return mapper.map(entity, RateDto.class);
     }
 }

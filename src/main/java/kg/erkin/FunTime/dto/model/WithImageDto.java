@@ -15,5 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Builder
 public class WithImageDto {
+    Long id;
+
     List<ImageDto> images;
 }
