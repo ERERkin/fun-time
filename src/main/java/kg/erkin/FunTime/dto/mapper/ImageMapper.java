@@ -20,4 +20,9 @@ public class ImageMapper implements BaseMapper<Image, ImageDto> {
     public ImageDto entityToDto(Image entity) {
         return entity == null ? null : mapper.map(entity, ImageDto.class);
     }
+
+    @Override
+    public String getName() {
+        return "Image";
+    }
 }

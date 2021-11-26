@@ -36,4 +36,9 @@ public class UserMapper implements BaseMapper<User, UserDto>{
                 .avatar(withImageMapper.entityToDto(entity.getAvatar()))
                 .build();
     }
+
+    @Override
+    public String getName() {
+        return null;
+    }
 }

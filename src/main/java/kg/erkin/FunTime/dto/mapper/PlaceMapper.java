@@ -17,6 +17,11 @@ public class PlaceMapper implements BaseMapper<Place, PlaceDto> {
     private final RoomTypeMapper roomTypeMapper;
 
     @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
     public Place dtoToEntity(PlaceDto dto) {
         return (Place) Place.builder()
                 .id(dto.getId())

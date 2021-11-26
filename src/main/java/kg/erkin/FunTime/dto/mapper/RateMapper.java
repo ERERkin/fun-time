@@ -19,4 +19,9 @@ public class RateMapper implements BaseMapper<Rate, RateDto>{
     public RateDto entityToDto(Rate entity) {
         return mapper.map(entity, RateDto.class);
     }
+
+    @Override
+    public String getName() {
+        return null;
+    }
 }

@@ -4,6 +4,7 @@ import kg.erkin.FunTime.dto.entity.Place;
 import kg.erkin.FunTime.dto.entity.RoomType;
 import kg.erkin.FunTime.dto.model.PlaceDto;
 import kg.erkin.FunTime.dto.model.RoomTypeDto;
+import kg.erkin.FunTime.service.impl.BaseCrudServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Component;
@@ -12,8 +13,8 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Data
 public class RoomTypeMapper implements BaseMapper<RoomType, RoomTypeDto>{
-    private final PlaceMapper placeMapper;
     private final WithImageMapper withImageMapper;
+    private final BaseCrudServiceImpl baseCrudService;
 
     @Override
     public RoomType dtoToEntity(RoomTypeDto dto) {
@@ -21,9 +22,14 @@ public class RoomTypeMapper implements BaseMapper<RoomType, RoomTypeDto>{
                 .id(dto.getId())
                 .name(dto.getName())
                 .description(dto.getDescription())
-                .place(placeMapper.dtoToEntity(dto.getPlace()))
+                .place((Place) baseCrudService.getById(dto.getId()))
                 .album(withImageMapper.dtoToEntity(dto.getAlbum()))
                 .build().id(dto.getId());
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 
     @Override
@@ -32,7 +38,7 @@ public class RoomTypeMapper implements BaseMapper<RoomType, RoomTypeDto>{
                 .id(entity.getId())
                 .name(entity.getName())
                 .description(entity.getDescription())
-                .place(placeMapper.entityToDto(entity.getPlace()))
+                .placeId(entity.getPlace().getId())
                 .album(withImageMapper.entityToDto(entity.getAlbum()))
                 .build();
     }

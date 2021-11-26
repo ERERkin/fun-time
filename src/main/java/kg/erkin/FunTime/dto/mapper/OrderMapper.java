@@ -22,4 +22,9 @@ public class OrderMapper implements BaseMapper<Order, OrderDto>{
     public OrderDto entityToDto(Order entity) {
         return mapper.map(entity, OrderDto.class);
     }
+
+    @Override
+    public String getName() {
+        return "Order";
+    }
 }
