@@ -2,13 +2,15 @@ package kg.erkin.FunTime.dto.entity;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Builder
+@SuperBuilder
+//@Builder
 @Entity
 @Table(name = "with_image")
 @Getter

@@ -19,6 +19,7 @@ public class PlaceMapper implements BaseMapper<Place, PlaceDto> {
     @Override
     public Place dtoToEntity(PlaceDto dto) {
         return (Place) Place.builder()
+                .id(dto.getId())
                 .name(dto.getName())
                 .description(dto.getDescription())
                 .address(dto.getAddress())

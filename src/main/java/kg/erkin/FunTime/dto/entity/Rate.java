@@ -2,11 +2,13 @@ package kg.erkin.FunTime.dto.entity;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Builder
+@SuperBuilder
+//@Builder
 @Entity
 @Table(name = "prices")
 @Getter

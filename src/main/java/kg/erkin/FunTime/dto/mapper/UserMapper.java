@@ -16,6 +16,7 @@ public class UserMapper implements BaseMapper<User, UserDto>{
     @Override
     public User dtoToEntity(UserDto dto) {
         return User.builder()
+                .id(dto.getId())
                 .login(dto.getLogin())
                 .password(dto.getPassword())
                 .email(dto.getEmail())

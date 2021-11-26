@@ -18,6 +18,7 @@ public class RoomTypeMapper implements BaseMapper<RoomType, RoomTypeDto>{
     @Override
     public RoomType dtoToEntity(RoomTypeDto dto) {
         return (RoomType) RoomType.builder()
+                .id(dto.getId())
                 .name(dto.getName())
                 .description(dto.getDescription())
                 .place(placeMapper.dtoToEntity(dto.getPlace()))
