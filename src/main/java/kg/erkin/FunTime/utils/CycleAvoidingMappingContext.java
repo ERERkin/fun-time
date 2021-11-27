@@ -3,10 +3,12 @@ package kg.erkin.FunTime.utils;
 import org.mapstruct.BeforeMapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.TargetType;
+import org.springframework.stereotype.Component;
 
 import java.util.IdentityHashMap;
 import java.util.Map;
 
+@Component
 public class CycleAvoidingMappingContext {
     private Map<Object, Object> knownInstances = new IdentityHashMap<Object, Object>();
 
