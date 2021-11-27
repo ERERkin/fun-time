@@ -1,29 +1,18 @@
 package kg.erkin.FunTime.controller;
 
+import kg.erkin.FunTime.controller.base.AbstractController;
 import kg.erkin.FunTime.dto.model.PlaceDto;
+import kg.erkin.FunTime.dto.model.RateDto;
+import kg.erkin.FunTime.service.RateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-public class RateController {
-    @GetMapping("/get")
-    ResponseEntity<?> getById(@RequestParam Long id){
-        return ResponseEntity.ok(null);
-    }
-
-    @PostMapping("/save")
-    ResponseEntity<?> save(@RequestBody PlaceDto placeDto){
-        return ResponseEntity.ok(placeDto);
-    }
-
-    @GetMapping("/all")
-    ResponseEntity<?> getAll(){
-        return ResponseEntity.ok(new ArrayList<>());
-    }
-
-    @DeleteMapping("/delete")
-    void deleteById(@RequestParam Long id){
-
+@RestController
+@RequestMapping("/rate")
+public class RateController extends AbstractController<RateDto, RateService> {
+    public RateController(RateService service) {
+        super(service);
     }
 }

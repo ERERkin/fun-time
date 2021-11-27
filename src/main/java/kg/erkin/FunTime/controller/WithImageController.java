@@ -1,29 +1,15 @@
 package kg.erkin.FunTime.controller;
 
-import kg.erkin.FunTime.dto.model.PlaceDto;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import kg.erkin.FunTime.controller.base.AbstractController;
+import kg.erkin.FunTime.dto.model.WithImageDto;
+import kg.erkin.FunTime.service.WithImageService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-
-public class WithImageController {
-    @GetMapping("/get")
-    ResponseEntity<?> getById(@RequestParam Long id){
-        return ResponseEntity.ok(null);
-    }
-
-    @PostMapping("/save")
-    ResponseEntity<?> save(@RequestBody PlaceDto placeDto){
-        return ResponseEntity.ok(placeDto);
-    }
-
-    @GetMapping("/all")
-    ResponseEntity<?> getAll(){
-        return ResponseEntity.ok(new ArrayList<>());
-    }
-
-    @DeleteMapping("/delete")
-    void deleteById(@RequestParam Long id){
-
+@RestController
+@RequestMapping("/withImage")
+public class WithImageController extends AbstractController<WithImageDto, WithImageService> {
+    public WithImageController(WithImageService service) {
+        super(service);
     }
 }

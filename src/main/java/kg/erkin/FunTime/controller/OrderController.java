@@ -1,30 +1,18 @@
 package kg.erkin.FunTime.controller;
 
+import kg.erkin.FunTime.controller.base.AbstractController;
 import kg.erkin.FunTime.dto.model.ImageDto;
 import kg.erkin.FunTime.dto.model.OrderDto;
+import kg.erkin.FunTime.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-public class OrderController {
-    @GetMapping("/get")
-    ResponseEntity<?> getById(@RequestParam Long id){
-        return ResponseEntity.ok(null);
-    }
-
-    @PostMapping("/save")
-    ResponseEntity<?> save(@RequestBody OrderDto order){
-        return ResponseEntity.ok(order);
-    }
-
-    @GetMapping("/all")
-    ResponseEntity<?> getAll(){
-        return ResponseEntity.ok(new ArrayList<>());
-    }
-
-    @DeleteMapping("/delete")
-    void deleteById(@RequestParam Long id){
-
+@RestController
+@RequestMapping("/order")
+public class OrderController extends AbstractController<OrderDto, OrderService> {
+    public OrderController(OrderService service) {
+        super(service);
     }
 }
