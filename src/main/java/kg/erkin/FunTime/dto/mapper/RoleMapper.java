@@ -1,12 +1,15 @@
 package kg.erkin.FunTime.dto.mapper;
 
 import kg.erkin.FunTime.dto.entity.Role;
+import kg.erkin.FunTime.dto.mapper.base.AbstractMapper;
+import kg.erkin.FunTime.dto.mapper.base.BaseMapper;
 import kg.erkin.FunTime.dto.model.RoleDto;
-import org.mapstruct.InjectionStrategy;
-import org.mapstruct.Mapper;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-@Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
-public interface RoleMapper extends BaseMapper<Role, RoleDto>{
+public class RoleMapper extends AbstractMapper<Role, RoleDto> {
+    public RoleMapper(ModelMapper mapper) {
+        super(mapper, Role.class, RoleDto.class);
+    }
 }
