@@ -2,21 +2,9 @@ package kg.erkin.FunTime.dto.mapper;
 
 import kg.erkin.FunTime.dto.entity.Rate;
 import kg.erkin.FunTime.dto.model.RateDto;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.springframework.stereotype.Component;
+import org.mapstruct.InjectionStrategy;
+import org.mapstruct.Mapper;
 
-@Component
-@AllArgsConstructor
-@Data
-public class RateMapper implements BaseMapper<Rate, RateDto>{
-    @Override
-    public Rate dtoToEntity(RateDto dto) {
-        return mapper.map(dto, Rate.class);
-    }
-
-    @Override
-    public RateDto entityToDto(Rate entity) {
-        return mapper.map(entity, RateDto.class);
-    }
+@Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
+public interface RateMapper extends BaseMapper<Rate, RateDto>{
 }
