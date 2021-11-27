@@ -14,17 +14,18 @@ public class AbstractController<D extends AbstractDto, S extends BaseService<D>>
 
     @Override
     public ResponseEntity<?> getById(Long id) {
-        return service.getById(id);
+        return ResponseEntity.ok(service.getById(id));
     }
 
     @Override
     public ResponseEntity<?> save(D dto) {
-        return service.save(dto);
+        System.out.println(dto);
+        return ResponseEntity.ok(service.save(dto));
     }
 
     @Override
     public ResponseEntity<?> getAll() {
-        return service.getAll();
+        return ResponseEntity.ok(service.getAll());
     }
 
     @Override

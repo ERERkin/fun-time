@@ -18,6 +18,6 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Role extends AbstractEntity {
-    @Column
+    @Column(name = "name")
     String name;
 }

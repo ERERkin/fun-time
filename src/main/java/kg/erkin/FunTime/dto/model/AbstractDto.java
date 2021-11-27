@@ -5,9 +5,13 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
+
 @Data
 @RequiredArgsConstructor
 @SuperBuilder
-public abstract class AbstractDto {
+@MappedSuperclass
+public abstract class AbstractDto implements Serializable {
     Long id;
 }
