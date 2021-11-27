@@ -1,9 +1,9 @@
 package kg.erkin.FunTime.repository;
 
-import kg.erkin.FunTime.dto.entity.BaseEntity;
+import kg.erkin.FunTime.dto.entity.AbstractEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.NoRepositoryBean;
 
-@Repository
-public interface BaseRepository extends JpaRepository<BaseEntity, Long> {
+@NoRepositoryBean
+public interface BaseRepository<E extends AbstractEntity> extends JpaRepository<AbstractEntity, Long> {
 }
