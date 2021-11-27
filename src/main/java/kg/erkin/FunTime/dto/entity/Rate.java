@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Rate extends BaseEntity{
+public class Rate extends AbstractEntity {
     @Column
     Long minute;
 

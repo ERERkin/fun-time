@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class BaseEntity {
+public class AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,10 +30,5 @@ public class BaseEntity {
     @PreUpdate
     public void persistUpdate() {
         this.dateUpdated = LocalDateTime.now();
-    }
-
-    public BaseEntity id(Long id){
-        this.setId(id);
-        return this;
     }
 }

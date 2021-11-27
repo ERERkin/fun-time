@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class WithImage extends BaseEntity{
+public class WithImage extends AbstractEntity {
     @OneToMany(mappedBy = "album", fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
     List<Image> images;

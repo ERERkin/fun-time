@@ -1,23 +1,17 @@
 package kg.erkin.FunTime.dto.model;
 
-import kg.erkin.FunTime.dto.entity.Place;
-import kg.erkin.FunTime.dto.entity.WithImage;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @RequiredArgsConstructor
-@Builder
-public class RoomTypeDto {
-    Long id;
-
+@SuperBuilder
+public class RoomTypeDto extends AbstractDto {
     String name;
 
     String description;

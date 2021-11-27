@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Place extends BaseEntity{
+public class Place extends AbstractEntity {
     @Column
     String name;
 

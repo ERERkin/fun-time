@@ -5,7 +5,6 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @SuperBuilder
 //@Builder
@@ -16,7 +15,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class RoomType extends BaseEntity {
+public class RoomType extends AbstractEntity {
     @Column
     String name;
 

@@ -1,22 +1,17 @@
 package kg.erkin.FunTime.dto.model;
 
-import kg.erkin.FunTime.dto.entity.RoomType;
-import kg.erkin.FunTime.dto.entity.User;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @RequiredArgsConstructor
-@Builder
-public class OrderDto {
-    Long id;
-
+@SuperBuilder
+public class OrderDto extends AbstractDto {
     LocalDateTime startRoom;
 
     RoomTypeDto roomType;

@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Order extends BaseEntity{
+public class Order extends AbstractEntity {
     @Column(columnDefinition = "start_room")
     LocalDateTime startRoom;
 

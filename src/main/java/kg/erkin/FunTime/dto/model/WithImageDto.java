@@ -1,21 +1,16 @@
 package kg.erkin.FunTime.dto.model;
 
-import kg.erkin.FunTime.dto.entity.Image;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @RequiredArgsConstructor
-@Builder
-public class WithImageDto {
-    Long id;
-
+@SuperBuilder
+public class WithImageDto extends AbstractDto{
     List<ImageDto> images;
 }

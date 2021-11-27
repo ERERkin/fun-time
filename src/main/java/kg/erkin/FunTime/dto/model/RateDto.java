@@ -1,21 +1,17 @@
 package kg.erkin.FunTime.dto.model;
 
-import kg.erkin.FunTime.dto.entity.RoomType;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @RequiredArgsConstructor
-@Builder
-public class RateDto {
-    Long id;
-
+@SuperBuilder
+public class RateDto extends AbstractDto {
     Long minute;
 
     BigDecimal amount;

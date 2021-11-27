@@ -15,7 +15,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Image extends BaseEntity {
+public class Image extends AbstractEntity {
     @Column
     String link;
 

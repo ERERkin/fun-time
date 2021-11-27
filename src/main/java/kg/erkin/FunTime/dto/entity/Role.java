@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Role extends BaseEntity {
+public class Role extends AbstractEntity {
     @Column
     String name;
 }

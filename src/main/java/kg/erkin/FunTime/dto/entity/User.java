@@ -15,7 +15,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User extends BaseEntity{
+public class User extends AbstractEntity {
     @Column
     String login;
 
