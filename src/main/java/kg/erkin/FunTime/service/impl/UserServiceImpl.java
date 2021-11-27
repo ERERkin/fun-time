@@ -6,7 +6,9 @@ import kg.erkin.FunTime.dto.model.UserDto;
 import kg.erkin.FunTime.repository.UserRepository;
 import kg.erkin.FunTime.service.UserService;
 import kg.erkin.FunTime.service.base.AbstractService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl extends AbstractService<User, UserDto, UserRepository, UserMapper> implements UserService {
     public UserServiceImpl(UserRepository repository, UserMapper mapper) {
         super(repository, mapper);

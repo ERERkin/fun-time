@@ -6,7 +6,9 @@ import kg.erkin.FunTime.dto.model.OrderDto;
 import kg.erkin.FunTime.repository.OrderRepository;
 import kg.erkin.FunTime.service.OrderService;
 import kg.erkin.FunTime.service.base.AbstractService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OrderServiceImpl extends AbstractService<Order, OrderDto, OrderRepository, OrderMapper> implements OrderService {
     public OrderServiceImpl(OrderRepository repository, OrderMapper mapper) {
         super(repository, mapper);
