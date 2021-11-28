@@ -12,14 +12,14 @@ import java.util.List;
 @SuperBuilder
 //@Builder
 @Entity
-@Table(name = "with_image")
+@Table(name = "with_images")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class WithImage extends AbstractEntity {
-    @OneToMany(mappedBy = "album", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "album", fetch = FetchType.LAZY)
     @Fetch(value = FetchMode.SUBSELECT)
     List<Image> images;
 }

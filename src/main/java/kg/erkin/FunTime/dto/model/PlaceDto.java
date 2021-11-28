@@ -20,5 +20,5 @@ public class PlaceDto extends AbstractDto {
 
     List<RoomTypeDto> roomTypes;
 
-    List<ImageDto> album;
+    WithImageDto album;
 }

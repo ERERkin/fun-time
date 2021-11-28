@@ -4,7 +4,6 @@ import kg.erkin.FunTime.dto.entity.AbstractEntity;
 import kg.erkin.FunTime.dto.mapper.base.BaseMapper;
 import kg.erkin.FunTime.dto.model.AbstractDto;
 import kg.erkin.FunTime.repository.BaseRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -27,9 +26,9 @@ public class AbstractService <
 
     @Override
     public Map<String, Object> getById(Long id) {
-        E entity = (E) repository.findById(id).get();
+        E entity = repository.findById(id).get();
         D dto = mapper.toDto(entity);
-        Map map = new LinkedHashMap();
+        Map<String, Object> map = new LinkedHashMap<String, Object>();
         map.put("body", dto);
         return map;
     }
@@ -37,10 +36,8 @@ public class AbstractService <
     @Override
     public Map<String, Object> save(D item) {
         E entity = mapper.toEntity(item);
-//        if(item.getId()!= null) entity.setDateCreated(
-//                repository.findById(item.getId()).get().getDateCreated());
         D dto = mapper.toDto(repository.save(entity));
-        Map map = new LinkedHashMap();
+        Map<String, Object> map = new LinkedHashMap<>();
         map.put("body", dto);
         return map;
     }
@@ -49,7 +46,7 @@ public class AbstractService <
     public Map<String, Object> getAll() {
         List<E> eList = repository.findAll().stream().map(x -> (E) x).collect(Collectors.toList());
         List<D> dList = mapper.toDtos(eList);
-        Map map = new LinkedHashMap();
+        Map<String, Object> map = new LinkedHashMap<String, Object>();
         map.put("body", dList);
         return map;
     }

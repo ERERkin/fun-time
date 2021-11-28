@@ -10,14 +10,14 @@ import java.time.LocalDateTime;
 @SuperBuilder
 //@Builder
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Order extends AbstractEntity {
-    @Column(columnDefinition = "start_room")
+    @Column(name = "start_room")
     LocalDateTime startRoom;
 
     @JoinColumn(name = "room_type_id")

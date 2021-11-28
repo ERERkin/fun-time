@@ -19,7 +19,6 @@ public class AbstractController<D extends AbstractDto, S extends BaseService<D>>
 
     @Override
     public ResponseEntity<?> save(D dto) {
-        System.out.println(dto);
         return ResponseEntity.ok(service.save(dto));
     }
 

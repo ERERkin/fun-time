@@ -20,6 +20,7 @@ public class AbstractEntity implements Serializable {
 
     @Column(name = "date_created")
     private LocalDateTime dateCreated;
+
     @Column(name = "date_updated")
     private LocalDateTime dateUpdated;
 
@@ -30,6 +31,7 @@ public class AbstractEntity implements Serializable {
 
     @PreUpdate
     public void persistUpdate() {
+        this.dateCreated = LocalDateTime.now();
         this.dateUpdated = LocalDateTime.now();
     }
 }

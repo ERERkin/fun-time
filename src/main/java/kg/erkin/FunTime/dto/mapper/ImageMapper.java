@@ -13,4 +13,11 @@ public class ImageMapper extends AbstractMapper<Image, ImageDto> {
     public ImageMapper(ModelMapper mapper) {
         super(mapper, Image.class, ImageDto.class);
     }
+
+    @Override
+    public ImageDto toDto(Image entity) {
+        if (entity == null) return null;
+        entity.setAlbum(null);
+        return mapper.map(entity, ImageDto.class);
+    }
 }

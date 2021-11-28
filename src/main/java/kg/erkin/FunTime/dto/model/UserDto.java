@@ -18,7 +18,7 @@ public class UserDto extends AbstractDto{
 
     String email;
 
-    List<ImageDto> avatar;
+    WithImageDto avatar;
 
     RoleDto role;
 }

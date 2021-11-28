@@ -1,5 +1,6 @@
 package kg.erkin.FunTime.dto.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
@@ -19,7 +20,7 @@ public class Image extends AbstractEntity {
     @Column
     String link;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "album_id")
     WithImage album;
 }
