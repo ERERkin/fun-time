@@ -25,30 +25,21 @@ public class AbstractService <
     }
 
     @Override
-    public Map<String, Object> getById(Long id) {
+    public D getById(Long id) {
         E entity = repository.findById(id).get();
-        D dto = mapper.toDto(entity);
-        Map<String, Object> map = new LinkedHashMap<String, Object>();
-        map.put("body", dto);
-        return map;
+        return mapper.toDto(entity);
     }
 
     @Override
-    public Map<String, Object> save(D item) {
+    public D save(D item) {
         E entity = mapper.toEntity(item);
-        D dto = mapper.toDto(repository.save(entity));
-        Map<String, Object> map = new LinkedHashMap<>();
-        map.put("body", dto);
-        return map;
+        return mapper.toDto(repository.save(entity));
     }
 
     @Override
-    public Map<String, Object> getAll() {
+    public List<D> getAll() {
         List<E> eList = repository.findAll().stream().map(x -> (E) x).collect(Collectors.toList());
-        List<D> dList = mapper.toDtos(eList);
-        Map<String, Object> map = new LinkedHashMap<String, Object>();
-        map.put("body", dList);
-        return map;
+        return mapper.toDtos(eList);
     }
 
     @Override

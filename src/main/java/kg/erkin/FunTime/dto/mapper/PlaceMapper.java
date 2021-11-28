@@ -20,9 +20,11 @@ public class PlaceMapper extends AbstractMapper<Place, PlaceDto> {
     public PlaceDto toDto(Place entity) {
         if (entity == null) return null;
         if (entity.getAlbum() != null && entity.getAlbum().getImages() != null)
-            entity.getAlbum().getImages().stream().map(x -> {
+            entity.getAlbum().getImages().stream().peek(x -> x.setAlbum(null)).collect(Collectors.toList());
+        if (entity.getRoomTypes() != null)
+            entity.getRoomTypes().stream().peek(x -> {
+                x.setPlace(null);
                 x.setAlbum(null);
-                return x;
             }).collect(Collectors.toList());
         return super.toDto(entity);
     }

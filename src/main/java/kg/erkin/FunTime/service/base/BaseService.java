@@ -3,14 +3,15 @@ package kg.erkin.FunTime.service.base;
 import kg.erkin.FunTime.dto.model.AbstractDto;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
 import java.util.Map;
 
 public interface BaseService<D extends AbstractDto> {
-    Map<String, Object> getById(Long id);
+    D getById(Long id);
 
-    Map<String, Object> save(D item);
+    D save(D item);
 
-    Map<String, Object> getAll();
+    List<D> getAll();
 
     void deleteById(Long id);
 }

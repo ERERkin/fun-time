@@ -23,7 +23,7 @@ public class PlaceServiceImpl extends AbstractService<Place, PlaceDto, PlaceRepo
     }
 
     @Override
-    public Map<String, Object> save(PlaceDto item) {
+    public PlaceDto save(PlaceDto item) {
         if(item.getId() == null){
             WithImageDto album = withImageService.saveWithImage(WithImage.builder().build());
             item.setAlbum(album);
