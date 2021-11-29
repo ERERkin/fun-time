@@ -12,4 +12,14 @@ public class RateMapper extends AbstractMapper<Rate, RateDto> {
     public RateMapper(ModelMapper mapper) {
         super(mapper, Rate.class, RateDto.class);
     }
+
+    @Override
+    public RateDto toDto(Rate entity) {
+        if (entity == null) return null;
+        if (entity.getRoomType() != null && entity.getRoomType().getPlace() != null){
+            entity.getRoomType().getPlace().setAlbum(null);
+            entity.getRoomType().getPlace().setRoomTypes(null);
+        }
+        return super.toDto(entity);
+    }
 }

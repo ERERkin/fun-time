@@ -1,5 +1,6 @@
 package kg.erkin.FunTime.dto.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
@@ -12,9 +13,10 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 @SuperBuilder
 public class OrderDto extends AbstractDto {
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime startRoom;
 
-    RoomTypeDto roomType;
+    RateDto rate;
 
     UserDto user;
 }

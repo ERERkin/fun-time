@@ -29,7 +29,7 @@ public class User extends AbstractEntity {
     @JoinColumn(name = "avatar_id")
     WithImage avatar;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id")
     Role role;
 }

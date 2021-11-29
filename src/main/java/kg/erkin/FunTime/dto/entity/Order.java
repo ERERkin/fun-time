@@ -20,9 +20,9 @@ public class Order extends AbstractEntity {
     @Column(name = "start_room")
     LocalDateTime startRoom;
 
-    @JoinColumn(name = "room_type_id")
-    @ManyToOne(targetEntity = RoomType.class)
-    RoomType roomType;
+    @JoinColumn(name = "rate_id")
+    @ManyToOne(targetEntity = Rate.class)
+    Rate rate;
 
     @JoinColumn(name = "user_id")
     @ManyToOne(targetEntity = User.class)
